@@ -1,3 +1,22 @@
+//toda vez que clicar no campo tipo Radio,ele chama a função
+
+$(document).ready(function() {
+   $('input[name="existe"]').on('click', function() { 
+      desabilitarCampos();
+   });
+});
+
+function desabilitarCampos() {
+   var simClicado = document.getElementById('chSim').checked;
+   if (simClicado) {
+       $('.grupo-existe').removeAttr('disabled');
+   } else {
+       $('.grupo-existe').attr('disabled', 'disabled').val('');
+       $('.grupo-existe[type="checkbox"]').prop('checked', false);
+
+   }
+}
+--------------------------------------------------------------
 document.addEventListener('DOMContentLoaded',function(){
     var chSim = document.getElementById('chSim');
     var chNao = document.getElementById('chNao');
